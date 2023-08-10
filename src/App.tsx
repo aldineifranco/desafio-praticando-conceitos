@@ -6,10 +6,6 @@ function App() {
     <>
       <Sidebar />
       <Input />
-      
-      <div>
-        <h1>olá</h1>
-      </div>
     </>
   )
 }

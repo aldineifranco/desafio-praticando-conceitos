@@ -1,3 +1,43 @@
 .insertTask {
-  
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2rem;
+}
+
+.insertTask input {
+  padding: 1rem;
+  background-color: var(--gray-500);
+  width: 736px;
+  border-radius: 0.25rem;
+  border: 0;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: var(--white);
+}
+
+.insertTask input:focus {
+  outline: transparent;
+}
+
+.insertTask a {
+  display: flex;
+  background-color: var(--blue-dark);
+  align-items: center;
+  color: var(--white);
+  gap: .5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 4px;
+
+  padding: 1rem;
+  text-decoration: none;
+  transition: 0.5;
+}
+
+.insertTask a:hover {
+  background-color: var(--blue);
 }
