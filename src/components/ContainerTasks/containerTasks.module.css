@@ -1,0 +1,73 @@
+section {
+  width: 46rem;
+  margin: 3.75rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.headerContainer {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.headerToDo {
+  display: flex;
+  justify-content: space-between;
+  width: 46rem;
+  margin: 0 auto;
+}
+
+.headerToDo div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.headerToDo div:nth-child(1) {
+  color: var(--blue);
+}
+
+.headerToDo div:nth-child(2) {
+  color: var(--purple);
+}
+
+.headerToDo div p {
+  font-weight: 700;
+}
+
+.headerToDo div span {
+  color: var(--white);
+  background-color: var(--gray-400);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.containerTasks {
+  width: 100%;
+  display: flex;
+  justify-content: center ;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 4rem 1.5rem;
+  border-radius: .5rem;
+  border-top: 1px solid var(--grey-400, #333);
+}
+
+.containerTasks div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerTasks div p {
+  color: var(--gray-300);
+  line-height: 1.4;
+}
+
+.containerTasks div p:nth-child(1) {
+  font-weight: 700;
+}

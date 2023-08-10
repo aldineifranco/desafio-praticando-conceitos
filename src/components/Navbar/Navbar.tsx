@@ -1,7 +1,7 @@
-import style from './sidebar.module.css';
+import style from './navbar.module.css';
 import logo from '../../assets/logo-rocket.svg'
 
-export function Sidebar() {
+export function Navbar() {
   return (
     <div className={style.sidebar}>
       <img src={logo} alt="logo-sidebar-rocketseat" />

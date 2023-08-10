@@ -3,7 +3,8 @@
   gap: .5rem;
   justify-content: center;
   align-items: center;
-  margin-top: -2rem;
+  width: 46rem;
+  margin: -2rem auto;
 }
 
 .insertTask input {
