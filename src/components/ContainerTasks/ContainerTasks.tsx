@@ -1,5 +1,6 @@
 import style from './containerTasks.module.css';
 import clipboard from '../../assets/clipboard.png';
+import { Task } from '../Task/Task';
 
 export function ContainerTasks() {
   return (
@@ -17,6 +18,8 @@ export function ContainerTasks() {
         </div>
       </div>
 
+      <Task />
+
       <div className={style.containerTasks}>
         <img src={clipboard} alt="task vazia" />
         <div>
@@ -24,6 +27,8 @@ export function ContainerTasks() {
           <p>Crie tarefas e organize seus itens a fazer</p>
         </div>
       </div>
+
+     
 
     </section>
   )

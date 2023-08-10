@@ -1,0 +1,24 @@
+.taskDefault {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--gray-500);
+  border-radius: 0.5rem;
+  align-self: stretch;
+}
+
+.taskDefault p {
+  line-height: 1.4;
+}
+
+.taskDefault input {
+  width: 1.5rem;
+  border: 1px solid var(--blue);
+}
+
+.taskDefault img {
+  width: 24px;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--danger);
+}
