@@ -45,9 +45,12 @@
   opacity: 1;
 }
 
-.taskDefault p {
+.taskDefault label {
   line-height: 1.4;
+  color: var(--white);
+  font-weight: 400;
 }
+
 
 .taskDefault img {
   width: 24px;

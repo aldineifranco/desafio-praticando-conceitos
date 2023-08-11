@@ -1,8 +1,9 @@
 import style from './containerTasks.module.css';
 import clipboard from '../../assets/clipboard.png';
 import { Task } from '../Task/Task';
+import { CardToDo } from '../../interface/CardToDo';
 
-export function ContainerTasks() {
+export function ContainerTasks({ textoTarefa }: CardToDo) {
   return (
     <section>
       <div className={style.headerContainer}>
@@ -18,7 +19,7 @@ export function ContainerTasks() {
         </div>
       </div>
 
-      <Task />
+      <Task textoTarefa={textoTarefa}/>
 
       <div className={style.containerTasks}>
         <img src={clipboard} alt="task vazia" />
@@ -27,9 +28,7 @@ export function ContainerTasks() {
           <p>Crie tarefas e organize seus itens a fazer</p>
         </div>
       </div>
-
      
-
     </section>
   )
 }
