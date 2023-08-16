@@ -1,3 +1,50 @@
+.insertTask {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  width: 46rem;
+  margin: -2rem auto;
+}
+
+.insertTask input {
+  padding: 1rem;
+  background-color: var(--gray-500);
+  width: 736px;
+  border-radius: 0.25rem;
+  border: 0;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: var(--white);
+}
+
+.insertTask input:focus {
+  outline: transparent;
+}
+
+.insertTask button {
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  background-color: var(--blue-dark);
+  align-items: center;
+  color: var(--white);
+  gap: .5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 4px;
+
+  padding: 1rem;
+  text-decoration: none;
+  transition: 0.5;
+}
+
+.insertTask button:hover {
+  background-color: var(--blue);
+}
+
 section {
   width: 46rem;
   margin: 3.75rem auto 0;
@@ -52,14 +99,14 @@ section {
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  padding: 4rem 1.5rem;
+  padding: 2rem 1.5rem;
   border-radius: .5rem;
   border-top: 1px solid var(--grey-400, #333);
 }
 
-.containerTasks div {
+.containerTasks > div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 

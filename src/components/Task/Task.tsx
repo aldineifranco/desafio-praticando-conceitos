@@ -6,10 +6,10 @@ export function Task({ textoTarefa }: CardToDo) {
   return (
     <div className={style.taskDefault} >
       <div className={style.checkboxContainer}>
-        <input type="checkbox"/>
+        <input type="checkbox" />
         <label>{textoTarefa}</label>
       </div>
-        <img src={Delete} alt="" />
+      <img src={Delete} alt="icone para excluir task" />
     </div>
   )
 }
