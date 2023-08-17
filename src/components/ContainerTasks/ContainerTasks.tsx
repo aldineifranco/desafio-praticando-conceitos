@@ -9,7 +9,7 @@ import { CardToDo } from '../../interface/CardToDo';
 export function ContainerTasks() {
   const [newTextTodo, setNewTextTodo] = useState('');
   const [toDo, setToDo] = useState<string[]>([]);
-  const [ contadorToDoCriado, setContadorToDoCriado ] = useState(0);
+  const [contadorToDoCriado, setContadorToDoCriado] = useState(0);
 
   function handleTextToDo(event: ChangeEvent<HTMLInputElement>) {
     setNewTextTodo(event.target.value)
@@ -41,29 +41,32 @@ export function ContainerTasks() {
       </section>
 
       <section>
-        <div className={style.headerContainer}>
-          <div className={style.headerToDo}>
-            <div>
-              <p>Tarefas criadas</p>
-              <span>{contadorToDoCriado}</span>
-            </div>
-            <div>
-              <p>Concluídas</p>
-              <span>0</span>
+        <div>
+          <div className={style.headerContainer}>
+            <div className={style.headerToDo}>
+              <div>
+                <p>Tarefas criadas</p>
+                <span>{contadorToDoCriado}</span>
+              </div>
+              <div>
+                <p>Concluídas</p>
+                <span>0</span>
+              </div>
             </div>
           </div>
         </div>
 
-
-        <div className={style.containerTasks}>
-          <div>
-            <img src={clipboard} alt="task vazia" />
+        <div className={`${style.containerTasks} ${contadorToDoCriado !== 0 ? style.hidden : '' } `}>
+          
             <div>
-              <p>Você ainda não tem tarefas cadastrad</p>
-              <p>Crie tarefas e organize seus itens a fazer</p>
+              <img src={clipboard} alt="task vazia" />
+              <div>
+                <p>Você ainda não tem tarefas cadastrad</p>
+                <p>Crie tarefas e organize seus itens a fazer</p>
+              </div>
             </div>
           </div>
-        </div>
+        
 
         <div>
           {toDo.map((item, index) => (
