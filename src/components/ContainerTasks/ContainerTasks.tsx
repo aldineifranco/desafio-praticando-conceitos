@@ -41,7 +41,6 @@ export function ContainerTasks() {
       </section>
 
       <section>
-        <div>
           <div className={style.headerContainer}>
             <div className={style.headerToDo}>
               <div>
@@ -50,12 +49,11 @@ export function ContainerTasks() {
               </div>
               <div>
                 <p>Concluídas</p>
-                <span>0</span>
+                <span>0 de {contadorToDoCriado}</span>
               </div>
             </div>
           </div>
-        </div>
-
+      
         <div className={`${style.containerTasks} ${contadorToDoCriado !== 0 ? style.hidden : '' } `}>
           
             <div>

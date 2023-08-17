@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 46rem;
-  margin: -2rem auto;
+  margin: -5rem auto 0;
 }
 
 .insertTask input {
@@ -13,6 +13,7 @@
   width: 736px;
   border-radius: 0.25rem;
   border: 0;
+ 
 
   font-size: 1rem;
   font-weight: 400;
@@ -55,7 +56,6 @@ section {
 }
 
 .headerContainer {
-  margin-top: 4rem;
   display: flex;
   justify-content: center;
 }
