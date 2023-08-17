@@ -8,7 +8,8 @@ import { CardToDo } from '../../interface/CardToDo';
 
 export function ContainerTasks() {
   const [newTextTodo, setNewTextTodo] = useState('');
-  const [toDo, setToDo] = useState([])
+  const [toDo, setToDo] = useState<string[]>([]);
+  const [ contadorToDoCriado, setContadorToDoCriado ] = useState(0);
 
   function handleTextToDo(event: ChangeEvent<HTMLInputElement>) {
     setNewTextTodo(event.target.value)
@@ -19,6 +20,7 @@ export function ContainerTasks() {
 
     setToDo([...toDo, newTextTodo]);
     setNewTextTodo(" ");
+    setContadorToDoCriado(contadorToDoCriado + 1);
   }
 
   return (
@@ -43,7 +45,7 @@ export function ContainerTasks() {
           <div className={style.headerToDo}>
             <div>
               <p>Tarefas criadas</p>
-              <span>0</span>
+              <span>{contadorToDoCriado}</span>
             </div>
             <div>
               <p>Concluídas</p>
