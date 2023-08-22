@@ -23,6 +23,15 @@ export function ContainerTasks() {
     setContadorToDoCriado(contadorToDoCriado + 1);
   }
 
+  function deleteTask(taskToDelete: string) {
+    const taskWithoutDeleteOne = toDo.filter((item) => {
+      return item !== taskToDelete;
+    });
+
+    setToDo(taskWithoutDeleteOne);
+    setContadorToDoCriado(contadorToDoCriado - 1)
+  }
+
   return (
     <>
       <section>
@@ -41,7 +50,6 @@ export function ContainerTasks() {
       </section>
 
       <section>
-        <div>
           <div className={style.headerContainer}>
             <div className={style.headerToDo}>
               <div>
@@ -50,12 +58,11 @@ export function ContainerTasks() {
               </div>
               <div>
                 <p>Concluídas</p>
-                <span>0</span>
+                <span>0 de {contadorToDoCriado}</span>
               </div>
             </div>
           </div>
-        </div>
-
+      
         <div className={`${style.containerTasks} ${contadorToDoCriado !== 0 ? style.hidden : '' } `}>
           
             <div>
@@ -72,6 +79,7 @@ export function ContainerTasks() {
           {toDo.map((item, index) => (
             <Task key={index}
               textoTarefa={item}
+              onDeleteTask={deleteTask}
             />
           ))}
         </div>
