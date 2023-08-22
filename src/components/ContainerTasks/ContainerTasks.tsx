@@ -23,6 +23,15 @@ export function ContainerTasks() {
     setContadorToDoCriado(contadorToDoCriado + 1);
   }
 
+  function deleteTask(taskToDelete: string) {
+    const taskWithoutDeleteOne = toDo.filter((item) => {
+      return item !== taskToDelete;
+    });
+
+    setToDo(taskWithoutDeleteOne);
+    setContadorToDoCriado(contadorToDoCriado - 1)
+  }
+
   return (
     <>
       <section>
@@ -70,6 +79,7 @@ export function ContainerTasks() {
           {toDo.map((item, index) => (
             <Task key={index}
               textoTarefa={item}
+              onDeleteTask={deleteTask}
             />
           ))}
         </div>
