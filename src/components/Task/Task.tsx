@@ -3,7 +3,7 @@ import Delete from '../../assets/deleteIcon.svg';
 import {Trash} from 'phosphor-react';
 import { CardToDo } from '../../interface/CardToDo';
 
-export function Task({ textoTarefa, onDeleteTask }: CardToDo):JSX.Element {
+export function Task({ textoTarefa, onDeleteTask }: CardToDo) {
 
   function handleDeleteTask() {
     onDeleteTask(textoTarefa);
