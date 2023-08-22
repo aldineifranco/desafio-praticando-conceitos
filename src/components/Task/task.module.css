@@ -52,8 +52,14 @@
   line-height: 1.4;
   color: var(--white);
   font-weight: 400;
+  display: flex;
+  gap: 8px;
 }
 
+.tarefaConcluida {
+  color: var(--gray-300);
+  text-decoration-line: line-through;
+}
 
 .taskDefault button {
   cursor: pointer;
