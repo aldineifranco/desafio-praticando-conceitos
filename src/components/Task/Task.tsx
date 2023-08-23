@@ -3,11 +3,11 @@ import {Trash} from 'phosphor-react';
 import { CardToDo } from '../../interface/CardToDo';
 import { useState } from 'react';
 
-export function Task({ textoTarefa, onDeleteTask }: CardToDo) {
+export function Task({ textoTarefa, onDeleteTask, onChangeTarefaConcluida }: CardToDo) {
   const [ tarefaConcluida, setTarefaConcluida ] = useState({
     selecionado: false
-  });  
-
+  });
+  
   function handleDeleteTask() {
     onDeleteTask(textoTarefa);
   }
@@ -17,9 +17,8 @@ export function Task({ textoTarefa, onDeleteTask }: CardToDo) {
     setTarefaConcluida({
       selecionado: name === 'selecionado' ? checked : tarefaConcluida.selecionado 
     })
-    console.log(tarefaConcluida)
+    onChangeTarefaConcluida(tarefaConcluida.selecionado);
   }
-
 
   return (
     <div className={style.taskDefault} >

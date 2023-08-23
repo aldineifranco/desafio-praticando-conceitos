@@ -3,13 +3,14 @@ import clipboard from '../../assets/clipboard.png';
 import { Task } from '../Task/Task';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import plusIcon from '../../assets/plus.svg';
-import { CardToDo } from '../../interface/CardToDo';
+
 
 
 export function ContainerTasks() {
   const [newTextTodo, setNewTextTodo] = useState('');
   const [toDo, setToDo] = useState<string[]>([]);
   const [contadorToDoCriado, setContadorToDoCriado] = useState(0);
+  const [contadorTarefaConcluida, setContadorTarefaConcluida] = useState(0);
 
   function handleTextToDo(event: ChangeEvent<HTMLInputElement>) {
     setNewTextTodo(event.target.value)
@@ -30,6 +31,15 @@ export function ContainerTasks() {
 
     setToDo(taskWithoutDeleteOne);
     setContadorToDoCriado(contadorToDoCriado - 1)
+    setContadorTarefaConcluida(contadorTarefaConcluida - 1)
+  }
+
+  function handleTarefaConcluida(event: any) {
+    if (event === false) {
+      return setContadorTarefaConcluida(contadorTarefaConcluida + 1)
+    } else if (event === true) {
+      return setContadorTarefaConcluida(contadorTarefaConcluida - 1)
+    }
   }
 
   return (
@@ -50,36 +60,37 @@ export function ContainerTasks() {
       </section>
 
       <section>
-          <div className={style.headerContainer}>
-            <div className={style.headerToDo}>
-              <div>
-                <p>Tarefas criadas</p>
-                <span>{contadorToDoCriado}</span>
-              </div>
-              <div>
-                <p>Concluídas</p>
-                <span>0 de {contadorToDoCriado}</span>
-              </div>
-            </div>
-          </div>
-      
-        <div className={`${style.containerTasks} ${contadorToDoCriado !== 0 ? style.hidden : '' } `}>
-          
+        <div className={style.headerContainer}>
+          <div className={style.headerToDo}>
             <div>
-              <img src={clipboard} alt="task vazia" />
-              <div>
-                <p>Você ainda não tem tarefas cadastrad</p>
-                <p>Crie tarefas e organize seus itens a fazer</p>
-              </div>
+              <p>Tarefas criadas</p>
+              <span>{contadorToDoCriado}</span>
+            </div>
+            <div>
+              <p>Concluídas</p>
+              <span>{contadorTarefaConcluida} de {contadorToDoCriado}</span>
             </div>
           </div>
-        
+        </div>
+
+        <div className={`${style.containerTasks} ${contadorToDoCriado !== 0 ? style.hidden : ''} `}>
+
+          <div>
+            <img src={clipboard} alt="task vazia" />
+            <div>
+              <p>Você ainda não tem tarefas cadastrad</p>
+              <p>Crie tarefas e organize seus itens a fazer</p>
+            </div>
+          </div>
+        </div>
+
 
         <div>
           {toDo.map((item, index) => (
             <Task key={index}
               textoTarefa={item}
               onDeleteTask={deleteTask}
+              onChangeTarefaConcluida={handleTarefaConcluida}
             />
           ))}
         </div>
